@@ -1,5 +1,6 @@
 import { Image, View, Text, TouchableOpacity, FlatList, Modal } from 'react-native'
 import { MaterialIcons } from '@expo/vector-icons'
+import { router } from 'expo-router'
 
 import { styles } from './styles'
 import { colors } from '@/styles/colors'
@@ -14,7 +15,7 @@ export default function Index() {
       <View style={styles.header}>
         <Image source={require('@/assets/logo.png')} style={styles.logo} />
 
-        <TouchableOpacity activeOpacity={0.3}>
+        <TouchableOpacity onPress={() => router.navigate('/add')}>
           <MaterialIcons name='add' size={32} color={colors.green[300]} />
         </TouchableOpacity>
       </View>
@@ -35,7 +36,7 @@ export default function Index() {
         showsVerticalScrollIndicator={false}
       />
 
-      <Modal transparent visible={true}>
+      <Modal transparent visible={false}>
         <View style={styles.modal}>
           <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
@@ -54,7 +55,7 @@ export default function Index() {
 
             <View style={styles.modalFooter}>
               <Option name='Excluir' icon='delete' variant='secondary' />
-              <Option name='Abrir' icon='language'/>
+              <Option name='Abrir' icon='language' />
             </View>
           </View>
         </View>
