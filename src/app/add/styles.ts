@@ -22,5 +22,9 @@ export const styles = StyleSheet.create({
         fontSize: 14,
         paddingHorizontal: 24, 
         marginBottom: 10,       
+    },
+    form: {
+        padding: 18,
+        gap: 16
     }
 })
