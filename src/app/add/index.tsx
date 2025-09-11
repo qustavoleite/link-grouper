@@ -1,10 +1,11 @@
 import { Text, TouchableOpacity, View } from 'react-native'
-import { router } from "expo-router"
+import { router } from 'expo-router'
 import { styles } from './styles'
 import { MaterialIcons } from '@expo/vector-icons'
 import { colors } from '@/styles/colors'
 import { Categories } from '@/components/categories'
 import { Input } from '@/components/input'
+import { Button } from '@/components/button'
 
 export default function Add() {
   return (
@@ -22,6 +23,7 @@ export default function Add() {
       <View style={styles.form}>
         <Input placeholder='Nome' />
         <Input placeholder='Url' />
+        <Button title='Adicionar' />
       </View>
     </View>
   )
