@@ -11,6 +11,7 @@ import { Button } from '@/components/button'
 export default function Add() {
   const [name, setName] = useState("")
   const [url, setUrl] = useState("")
+  const [category, setCategory] = useState("")
 
   function handleAdd(){
     console.log({name, url})
@@ -26,7 +27,7 @@ export default function Add() {
       </View>
 
       <Text style={styles.label}>Selecione uma categoria</Text>
-      <Categories />
+      <Categories selected={category} onChange={setCategory}/>
 
       <View style={styles.form}>
         <Input placeholder='Nome' onChangeText={setName} autoCorrect={false} />
