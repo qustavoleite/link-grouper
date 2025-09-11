@@ -32,13 +32,8 @@ export default function Add() {
         id: new Date().getTime().toString(),
         name,
         url,
-        category
+        category,
       })
-
-      //const data = await LinkStorage.get()
-      //console.log(data)
-
-      //console.log({ name, url, category })
     } catch (error) {
       Alert.alert('Erro', 'Não foi possivel salvar o link')
     }
@@ -58,7 +53,12 @@ export default function Add() {
 
       <View style={styles.form}>
         <Input placeholder='Nome' onChangeText={setName} autoCorrect={false} />
-        <Input placeholder='URL' onChangeText={setUrl} autoCorrect={false} autoCapitalize='none'/>
+        <Input
+          placeholder='URL'
+          onChangeText={setUrl}
+          autoCorrect={false}
+          autoCapitalize='none'
+        />
         <Button title='Adicionar' onPress={handleAdd} />
       </View>
     </View>
