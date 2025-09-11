@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Text, TouchableOpacity, View } from 'react-native'
+import { Alert, Text, TouchableOpacity, View } from 'react-native'
 import { router } from 'expo-router'
 import { styles } from './styles'
 import { MaterialIcons } from '@expo/vector-icons'
@@ -14,7 +14,19 @@ export default function Add() {
   const [category, setCategory] = useState("")
 
   function handleAdd(){
-    console.log({name, url})
+    if(!category){
+      return Alert.alert("Categoiria", "Selecione uma categoria")
+    }
+
+    if(!name.trim()){
+      return Alert.alert("Nome", "Informe um nome para o link")
+    }
+
+    if (!url.trim()) {
+      return Alert.alert('Url', 'Informe a url')
+    }
+    
+    console.log({name, url, category})
   }
 
   return (
@@ -31,7 +43,7 @@ export default function Add() {
 
       <View style={styles.form}>
         <Input placeholder='Nome' onChangeText={setName} autoCorrect={false} />
-        <Input placeholder='Url' onChangeText={setUrl} autoCorrect={false} />
+        <Input placeholder='URL' onChangeText={setUrl} autoCorrect={false} />
         <Button title='Adicionar' onPress={handleAdd} />
       </View>
     </View>
